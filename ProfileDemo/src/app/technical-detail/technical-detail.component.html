@@ -1,0 +1,23 @@
+<div class="panel-group">
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    Technical Info
+  </div>
+  <div class="panel-body">
+    <table class="table table-bordered table-success">
+      <tr>
+        <th>FrontEnd Tech</th>
+        <th>BackEnd Tech</th>
+        <th>OS</th>
+        <th>Database</th>
+      </tr>      
+      <tr *ngFor="let technicalSkil of technicalSkilSetList">
+        <td>{{technicalSkil.frontEnd}}</td>
+        <td>{{technicalSkil.backEnd}}</td>
+        <td>{{technicalSkil.os}}</td>
+        <td>{{technicalSkil.database}}</td>
+      </tr>
+    </table>    
+  </div>
+</div>
+</div>

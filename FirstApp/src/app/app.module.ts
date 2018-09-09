@@ -17,4 +17,9 @@ import { FailureMsgComponent } from './failure-msg/failure-msg.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    console.log("App Module Object Created...");
+  }
+  
+}
