@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+
+<select (change)="toggleButton(buttonStatus.value)" #buttonStatus>
+  <option value="-1">-:Change States:-</option>
+  <option value="false">Enable</option>
+  <option value="true">Disabled</option>  
+</select>
+
+<h2>You have selected {{selectdedStatus}}</h2>
+
+
+<button (click)="sayHello()" [disabled]="flag">Say Hello</button>
+<hr/>
+<app-friend-list></app-friend-list>

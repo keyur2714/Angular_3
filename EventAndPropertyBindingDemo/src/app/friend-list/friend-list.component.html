@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <input type=text name=friendName #name class="form-control"/>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-info" (click)="addFriend(name.value)">Add Friend</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+<table class="table table-striped">
+  <tr>
+    <th>Friend Name</th>
+    <th>Delete</th>
+   </tr>
+  <tr *ngFor="let friendName of friendsList;let i=index" (click)="setSelectedFriend(friendName)" [class.selected]="selectedFriendName == friendName">
+      <td>{{friendName}} == > {{i}}</td>
+      <td><button (click)="delete(i)">Delete</button></td>      
+  </tr>
+</table>
+</div>
+</div>
+<h3>Selected Friend is : {{selectedFriendName}}</h3>
+</div>
