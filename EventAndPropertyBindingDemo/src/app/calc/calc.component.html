@@ -1,0 +1,35 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-6">
+    Number 1: 
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name=num1 #num1 />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    Number 2: 
+  </div>
+  <div class="col-md-6">
+    <input type="text" class="form-control" name=num2 #num2 />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+    <button class="btn btn-primary" (click)="add(num1.value,num2.value)">+</button>
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-primary" (click)="mul(num1.value,num2.value)">*</button>
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-danger" (click)="div(num1.value,num2.value)">/</button>
+  </div>
+  <div class="col-md-3">
+    <button class="btn btn-primary" (click)="sub(num1.value,num2.value)">-</button>
+  </div>  
+</div>
+<div class="row">
+  <div class="col-md-12">Result is : {{result}}</div>
+</div>
+</div>
