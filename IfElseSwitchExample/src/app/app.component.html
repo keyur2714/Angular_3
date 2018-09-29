@@ -1,0 +1,46 @@
+<h1>{{title}}</h1>
+
+<h2>Angular 2</h2>
+
+<div *ngIf="age >= 18">
+  <span [ngClass]="'ifFormatMsg'">
+    You are Eligible for Votting.
+  </span>
+</div>
+
+<div *ngIf="age < 18">
+  <span class="elseFormatMsg">
+    You are Not Eligible for Votting.
+  </span>
+</div>
+
+<h2>Angular 4/5/6</h2>
+
+<div *ngIf="age >= 18 then ifBlock else elseBlock"></div>
+<ng-template #ifBlock>  
+  You are Eligible for Votting..  
+</ng-template>
+<ng-template #elseBlock>
+  You are Not Eligible for Votting..
+</ng-template>
+<input type=number name=per [(ngModel)]="per"/>
+{{per}}
+<button (click)="calculateGrade()">Calculate Grade</button>
+<h2>ngSwitch Ex</h2>
+<div [ngSwitch]="grade">
+  <span *ngSwitchCase="'Distinction'">
+    Your Grade is Distinctions : A+
+  </span>
+  <span *ngSwitchCase="'First'">
+    Your Grade is First : A
+  </span>
+  <span *ngSwitchCase="'Second'">
+    Your Grade is Second : B
+  </span>
+  <span *ngSwitchCase="'Pass'">
+    Your Grade is Third : C
+  </span>
+  <span *ngSwitchCase="'Fail'">
+    Sorry You are Fail : F
+  </span>
+</div>

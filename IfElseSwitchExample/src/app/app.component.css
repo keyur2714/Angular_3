@@ -1,0 +1,13 @@
+h1{
+    color: grey;
+}
+.ifFormatMsg{
+    border: 1px solid blue;
+    background-color: greenyellow;
+    color: white;
+}
+.elseFormatMsg{
+    border: 1px solid red;
+    background-color: papayawhip;
+    color: white;
+}
