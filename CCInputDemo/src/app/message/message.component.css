@@ -1,0 +1,15 @@
+.default{
+    border: 1px solid grey;
+    color: white;
+    background-color: black;
+}
+.success{
+    border: 1px solid blueviolet;
+    color: yellowgreen;
+    background-color: black;
+}
+.fail{
+    border: 1px solid red;
+    color: red;
+    background-color: black;
+}

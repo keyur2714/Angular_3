@@ -1,0 +1,9 @@
+<p *ngIf="type === 'success'" [ngClass]="type">
+  {{msg}}
+</p>
+<p *ngIf="type === 'fail'" [ngClass]="type">
+  {{msg}}
+</p>
+<p *ngIf="type !== 'fail' && type !== 'success'" [ngClass]="'default'">
+  {{msg}}
+</p>

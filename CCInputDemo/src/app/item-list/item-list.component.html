@@ -1,0 +1,20 @@
+<!-- <table>
+  <tr>
+    <th>Id</th>
+    <th>Code</th>
+    <th>Desc</th>
+    <th>Unit Price</th>
+  </tr>
+  <tr *ngFor="let item of itemList">
+    <td>{{item.id}}</td>
+    <td>{{item.code}}</td>
+    <td>{{item.desc}}</td>
+    <td>{{item.unitPrice}}</td>
+  </tr>
+</table> -->
+<app-custom-grid
+ [columnHeaderList]="itemHeaderList"
+ [columnList]="columnList"
+ [dataList]="itemList"
+>
+</app-custom-grid>
