@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+<app-message [msg]="msg" (getFormattedMsg)="getMsg($event)">
+</app-message>
+
+{{formattedMsg}}
+
+<hr/>
+<app-numericoperations 
+(getResult)="getNumericResults($event)"
+(getFormattedResult)="getStringResults($event)"
+>    
+</app-numericoperations>
+
+<h1>{{rk}}</h1>
+<hr/>
+<h1>{{formattedResult}}</h1>

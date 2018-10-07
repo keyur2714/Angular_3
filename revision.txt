@@ -1,0 +1,72 @@
+
+	Node JS
+		npm
+		node
+		CLI
+	angular.json
+		index.html
+		main.ts
+		paackage.json
+	
+		node_modules
+		  --
+	@angular/core	
+	@NgModule 
+		declaration [
+			components
+		]			
+		imports [
+			BrowserModule
+			AdminModule
+		]
+		providers [
+			services
+		]
+		bootstrap	[
+			load on startup
+		] 
+	
+	class Student{		
+		rollNo:number;
+		name:string;
+	}
+	
+	student1 : Student = new Student();
+	student2 : Student = new Student();
+		
+	student1[rollNo,name]	student2[]
+
+	@Component
+		selector
+		templateUrl	
+		template[``]
+		styleUrl
+		styles[]
+
+	ng g c componentName --spec=false
+	
+	InBuild Directives
+		ngFor
+		ngIf
+		ngSwitch
+		ngClass 
+	Object Creation Java script / type script
+	Array [] 
+	Array of Objects
+
+	Event & Property Bindings
+	()="methods"
+	[]="<variable>"
+
+Custom Components
+	@Input()
+			
+	.ts
+		flagB : false;
+	
+	b1 (click)="enableB2()"
+	
+	b2 [disabled]="flagB"
+		
+	b3	
+	

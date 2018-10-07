@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./educational-detail.component.css']
 })
 export class EducationalDetailComponent implements OnInit {
-
   sscEducationInfo = {
     qualification: "10th",
     degree: "SSC",
