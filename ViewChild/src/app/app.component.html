@@ -1,0 +1,12 @@
+<h1>{{title}}</h1>
+
+<input name=str #str />
+<p>
+  <button (click)="convertToUpperCase()">Convert UpperCase</button>
+  <button (click)="convertToLowerCase()">Convert LoweCase</button>
+  <button (click)="convertToReverse()">Reverse</button>
+</p>
+<p #result>
+  Good Morning
+</p>
+<app-string-util>{{resultString}}</app-string-util>
