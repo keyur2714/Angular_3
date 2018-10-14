@@ -1,0 +1,33 @@
+<h1 appMyDirective>{{title}}</h1>
+<p appMyDirective [color]="'pink'">
+  Hello Radhe Krishna...!
+</p>
+<div appMyDirective [color]="color" [fontSize]="'40px'">
+  Hello...!
+</div>
+
+<table>
+  <tr>
+    <th appMyDirective>Name</th>
+  </tr>
+  <tr *ngFor="let name of friendsList;let i=index">
+    <td appMyDirective [color]="colorList[i]" [fontSize]="'10px'">
+      {{name}}
+    </td>
+  </tr>
+
+</table>
+
+<div *appMyLoop="3">
+  Good Morning..!
+</div>
+
+<ng-template [appMyLoop]="7">  
+  <p>
+    Hi
+  </p>
+</ng-template>
+
+<div *appMyIf="false">
+  Good Afternoon...!
+</div>
