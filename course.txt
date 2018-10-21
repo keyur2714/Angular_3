@@ -1,0 +1,50 @@
+Setup -- Done
+Basics of Angular CLI Project structure -- Done
+bootstrapping application with component -- Done
+simple component -- Done
+type declaration -- Done
+array -- Done 
+class (model class) -- Done
+object array -- Done
+inbuild directives -- Done
+	ngFor
+	ngIf
+	ngModel (two way bindigs)
+Custome Directives	 -- Done
+	- Structural Directive
+	- Attribute Directive
+Component Communication	-- Done
+	Input
+	Output
+	ViewChild
+===================================
+-- Forms --  
+	1. Template Driven Forms
+	2. Reactive Forms
+======================
+-- DI & Services --
+	1. Dependency Injection -- Done
+	2. Services / Providers -- Done
+
+-- local storage/session storage 
+-- Observable from RXJS -- Done
+	-- operators (map//catch) Done
+	-- switch map
+-- HttpModule -- Done
+--JSON SERVER -- Done	 
+-- Routing Module & Routing with --
+Lazy Loading :: -- 
+-- Aunticationn & Authorization 
+	-- Http Interceptor --
+	-- JWT  --
+	-- Routing with guards - -- 
+------------Start small project--------
+Pipes Inbuilt & custome pipe -- Done
+Unit Testing -- 
+Animations  --
+Deployments-- how to deploy on server	--
+Angular Material -  
+model popup 		
+
+
+	
