@@ -18,16 +18,25 @@
 
 </table>
 
-<div *appMyLoop="3">
+<div *appMyLoop="9">
   Good Morning..!
 </div>
 
-<ng-template [appMyLoop]="7">  
+<div *appMyLoop="'9'">
+  K
+</div>
+
+<ng-template [appMyLoop]="7" [appMyLoopExtraParam]="'Write'">  
   <p>
     Hi
   </p>
 </ng-template>
 
-<div *appMyIf="false">
+<div *appMyIf="true">
   Good Afternoon...!
 </div>
+<ng-template [appMyIf]="true">
+  <div>
+    Good Afternoon...!
+  </div>
+</ng-template>

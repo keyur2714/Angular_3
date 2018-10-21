@@ -7,6 +7,10 @@ export class MyLoopDirective {
 
   constructor(private viewContainerRef:ViewContainerRef,private templateRef : TemplateRef<any>) { }
 
+  @Input() set appMyLoopExtraParam(idx:number){
+    console.log(idx+" ==========");
+  }
+
   @Input("appMyLoop") set myLoop(loopCounter: number){
     console.log(loopCounter);
     console.log(this.viewContainerRef);
@@ -15,4 +19,5 @@ export class MyLoopDirective {
       this.viewContainerRef.createEmbeddedView(this.templateRef);
     }
   }
+
 }
