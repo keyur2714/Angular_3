@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header bg-dark text-white">
+      <h1>
+        {{title}}
+      </h1>
+    </div>
+    <div class="card-body">
+      <form #frm=ngForm (ngSubmit)="save(frm)">
+      <div class="row form-group"> 
+      <div class="col">Name</div>
+      <div class="col"><input type=text class="form-control" name=name ngModel #name=ngModel required minlength="3"/></div>  
+      <div *ngIf="name.errors && name.invalid && name.touched">
+        <div class="col" *ngIf="name.errors.required">
+          Name is Required Field.
+        </div>
+        <div class="col" *ngIf="name.errors.minlength">
+          Name is Min 3 Char.
+        </div>
+      </div>
+    </div>
+    <div class="row form-group"> 
+      <div class="col">Mobile No</div>
+      <div class="col"><input type=text class="form-control" name=mobileNo ngModel required #mobileNo=ngModel /></div>  
+      <div *ngIf="mobileNo.errors && mobileNo.invalid && mobileNo.touched">
+        <div class="col" *ngIf="mobileNo.errors.required">
+          Mobile Number is Required Field.
+        </div>        
+      </div>
+    </div>
+    <div class="row form-group"> 
+      <div class="col">City</div>
+      <div class="col"><input type=text class="form-control" name=city [(ngModel)]="ct" required #city=ngModel /></div>  
+      <div *ngIf="city.errors && city.invalid && city.touched">
+        <div class="col" *ngIf="city.errors.required">
+          City is Required Field.
+        </div>        
+      </div>
+    </div>
+    <div class="row"> 
+      <div class="col">
+        <button class="btn btn-primary" [disabled]="frm.invalid">Submit</button>
+      </div>      
+    </div>
+    </form>
+    </div>
+    <div class="card-footer" *ngIf="isSubmitted"> 
+      <div class="row">
+        <div class="col">Name is {{nm}}</div>
+      </div>
+      <div class="row">
+        <div class="col">MobileNo is {{mobileNumber}}</div>
+      </div>
+      <div class="row">
+        <div class="col">City is {{ct}}</div>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
