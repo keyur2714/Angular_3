@@ -23,11 +23,10 @@ Component Communication	-- Done
 	2. Reactive Forms
 ======================
 -- DI & Services --
-	1. Dependency Injection -- Done
-	2. Services / Providers -- Done
-
+	1. Dependency Injection -
+	2. Services / Providers --
 -- local storage/session storage 
--- Observable from RXJS -- Done
+-- Observable from RXJS -- 
 	-- operators (map//catch) Done
 	-- switch map
 -- HttpModule -- Done
