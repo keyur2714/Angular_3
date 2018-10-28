@@ -1,0 +1,82 @@
+<div class="card">
+    <div class="card-header bg-warning text-white">
+      <h1>
+        Inquiry Entry
+      </h1>
+      <div class="alert alert-success" *ngIf="successMsg != ''">
+        {{successMsg}}
+      </div>
+    </div>
+    <div class="card-body">
+      <form #frm=ngForm (ngSubmit)="save(frm)">
+      <div class="row form-group"> 
+      <div class="col">Name</div>
+      <div class="col"><input type=text class="form-control" name=name [(ngModel)]="inquiry.name" #name=ngModel required minlength="3"/></div>  
+      <div *ngIf="name.errors && name.invalid && name.touched">
+        <div class="col" *ngIf="name.errors.required">
+          Name is Required Field.
+        </div>
+        <div class="col" *ngIf="name.errors.minlength">
+          Name is Min 3 Char.
+        </div>
+      </div>
+    </div>
+    <div class="row form-group"> 
+      <div class="col">Mobile No</div>
+      <div class="col"><input type=text class="form-control" name=mobileNo [(ngModel)]="inquiry.mobileNo" required #mobileNo=ngModel /></div>  
+      <div *ngIf="mobileNo.errors && mobileNo.invalid && mobileNo.touched">
+        <div class="col" *ngIf="mobileNo.errors.required">
+          Mobile Number is Required Field.
+        </div>        
+      </div>
+    </div>
+    <div class="row form-group"> 
+      <div class="col">Email</div>
+      <div class="col"><input type=text class="form-control" name=email [(ngModel)]="inquiry.email" required email #email=ngModel /></div>  
+      <div *ngIf="email.errors && email.invalid && email.touched">
+        <div class="col" *ngIf="email.errors.required">
+          Email is Required Field.
+        </div>        
+        <div class="col" *ngIf="email.errors.email">
+          Email is Not Valid.
+        </div>        
+      </div>
+    </div>
+    <div class="row form-group"> 
+      <div class="col">Course</div>
+      <div class="col">
+        <select name=course [(ngModel)]="inquiry.course" class="form-control">
+             <option value=-1>-:Select Course:-</option> 
+             <option *ngFor="let course of courseList" [ngValue]="course">
+               {{course.courseName}} 
+             </option>
+        </select>
+      </div>        
+    </div>
+    <div class="row"> 
+      <div class="col">
+        {{frm.invalid}}
+        <button class="btn btn-primary" [disabled]="frm.invalid">Save</button>
+      </div>      
+      <div class="col">
+        <button type="button" class="btn btn-primary" (click)="reset(frm)">Reset</button>
+      </div>      
+    </div>
+    </form>
+    </div>
+    <div class="card-footer" *ngIf="isSubmitted"> 
+      <div class="row">
+        <div class="col">Name is {{inquiry.name}}</div>
+      </div>
+      <div class="row">
+        <div class="col">MobileNo is {{inquiry.mobileNo}}</div>
+      </div>
+      <div class="row">
+        <div class="col">Email is {{inquiry.email}}</div>
+      </div>
+      <div class="row">
+        {{inquiry.course | json}}
+        <div class="col">Course is {{inquiry.course.courseName}}</div>
+      </div>
+    </div>
+  </div>
