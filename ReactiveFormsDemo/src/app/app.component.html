@@ -1,0 +1,42 @@
+<h1>
+{{title}}
+</h1>
+<form [formGroup]="studentForm" (ngSubmit)="save()">
+  <table>
+    <tr>
+      <th>Roll No: </th>
+      <td><input type=text formControlName="rollNo" name="rollNo" /></td>
+      <td>
+        <span *ngIf="studentForm.get('rollNo').touched && studentForm.get('rollNo').invalid">
+          Roll Number is Required Field.
+        </span>
+      </td>
+    </tr>    
+    <tr>
+      <th>Name: </th>
+      <td><input type=text formControlName="name" name="name" /></td>
+      <td *ngIf="studentForm.get('name').errors && studentForm.get('name').touched && studentForm.get('name').invalid">
+        <span *ngIf="studentForm.get('name').errors['required']">
+          Name is Required Field.
+        </span>
+        <span *ngIf="studentForm.get('name').errors['minlength']">
+          Name is Min 3 Char.
+        </span>
+      </td>
+    </tr>    
+    <tr>
+      <th>Std: </th>
+      <td><input type=text formControlName="std" name="std" /></td>
+    </tr>    
+    <tr>
+      <td>
+        <button>Save</button>
+      </td>
+    </tr>    
+  </table>
+</form>
+<div *ngIf="isSubmitted">
+  Roll No : {{studentForm.get('rollNo').value}} <br />
+  Name : {{studentForm.get('name').value}} <br />
+  Std is : {{studentForm.get('std').value}} <br />
+</div>
