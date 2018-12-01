@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-
+import { TeamEntryComponent } from './team-entry/team-entry.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TeamEntryComponent
   ],
   imports: [
     BrowserModule,
