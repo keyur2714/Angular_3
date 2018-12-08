@@ -13,28 +13,35 @@
          <span *ngIf="teamEntryForm.get('teamManager').invalid && teamEntryForm.get('teamManager').touched">Team Manager Name is Required</span>
        </div>
     </div>   
-      <div formArrayName="employees" class="row">                
-        <div class="col">
-          <div class="row" *ngFor="let emp of employeeArray.controls;let i=index" [formGroupName]="emp">
-            <div class="row form-group">
-            <div class="col-md-3"><label><sup>*</sup>Employee Name :</label></div>
-            <div class="col-md-6">
-              <input type="text" class="form-control" [formControlName]="emp[i].name" />         
-            </div>
-            </div>    
-            <div class="row form-group">
-            <div class="col-md-3"><label><sup>*</sup>Department :</label></div>
-            <div class="col-md-6">
-              <input type="text" class="form-control" [formControlName]="emp[i].deptName" />         
-            </div>
-            </div>    
-          </div>
-        </div>
-        <div class="col">
-          <button type="button" class="btn btn-info" (click)="addNewEmployee()">Add New Employee</button>
-        </div> 
-      </div>      
+    <div formArrayName="employees" class="row form-group">                        
+          <div class="row" *ngFor="let emp of teamEntryForm.get('employees').controls;let i=index" [formGroupName]="i">        
+              <div class="row form-group">
+                <div class="col-md-3"><label><sup>*</sup>Employee Name :</label></div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" formControlName="name" />         
+                </div>
+              </div>    
+              <div class="row form-group">
+                <div class="col-md-3"><label><sup>*</sup>Department :</label></div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" formControlName="deptName" />         
+                </div>
+                <div class="col-md-3">
+                  <button type="button" class="btn btn-info" (click)="addNewEmployee()">Add New Employee</button>
+                </div> 
+              </div>                
+          </div>        
+    </div>      
     <div class="row form-group">
        <div class="col-md-12"><button class="btn btn-info" [disabled]="teamEntryForm.invalid">Save</button></div>      
     </div>    
 </form>  
+<div *ngIf="isSubmitted">
+  Manager : {{team.teamManager}} <br/>
+  Team Name  : {{team.teamName}} <br />
+  <ul *ngFor="let emp of team.employees">
+    <li>{{emp.name}}</li>
+    <li>{{emp.deptName}}</li>
+  </ul>
+</div> 
+

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators,FormArray } from '@angular/forms';
 import { Employee } from './employee.model';
+import { Team } from './team';
 @Component({
   selector: 'app-team-entry',
   templateUrl: './team-entry.component.html',
@@ -9,6 +10,8 @@ import { Employee } from './employee.model';
 export class TeamEntryComponent implements OnInit {
 
   teamEntryForm : FormGroup;  
+  team: Team = new Team();
+  isSubmitted: boolean = false;
 
   constructor(private formBuilder:FormBuilder) { }
 
@@ -26,18 +29,21 @@ export class TeamEntryComponent implements OnInit {
       )      
     });
   }
-
-  get employeeArray():FormArray{
-    return this.teamEntryForm.get('employees') as FormArray;    
+ 
+  get empFormArray(): FormArray{
+	  return this.teamEntryForm.get('employees') as FormArray;
   }
 
   addNewEmployee(){
 	  let fg = this.formBuilder.group(new Employee());
-	  this.employeeArray.push(fg);	  
+	  this.empFormArray.push(fg);	  
   }
   
   save(){
-    console.log(this.teamEntryForm.value);
-    console.log((<FormArray>this.teamEntryForm.get("employees")).controls);
+      this.isSubmitted = true;
+      let data = JSON.stringify(this.teamEntryForm.value);
+	    console.log('-----Team in JSON Format-----');
+      console.log(data);
+      this.team = this.teamEntryForm.value;    
   }
 }

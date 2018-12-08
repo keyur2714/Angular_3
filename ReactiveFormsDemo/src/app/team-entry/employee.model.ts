@@ -1,4 +1,4 @@
 export class Employee{
-    public name : string;
-    public deptName : string;
+    public name : string = '';
+    public deptName : string = '';
 }
