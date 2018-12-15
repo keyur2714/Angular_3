@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+        <table class="table table-striped">
+          <thead> 
+            <th>Id</th>
+            <th>Code</th>
+            <th>Desc</th>
+            <th>Unit Price</th>
+            <th>Color</th>
+            <th>Warranty</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of productList" (click)="getProductDetail(product.id)">
+              <td>{{product.id}}</td>
+              <td>{{product.code}}</td>
+              <td>{{product.description}}</td>
+              <td>{{product.unitPrice}}</td>
+              <td>{{product.color}}</td>
+              <td>{{product.warranty}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>    
+  </div>
+  <div class="row">
+    <div class="col-md-6">      
+      <table class="table">        
+        <tr>
+          <td>Description</td>
+          <td>{{selectedProduct.description}}</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>{{selectedProduct.unitPrice}}</td>
+        </tr>
+        <tr>
+          <td>Color</td>
+          <td>{{selectedProduct.color}}</td>
+        </tr>        
+      </table>
+    </div>
+  </div>  
+
+</div>
