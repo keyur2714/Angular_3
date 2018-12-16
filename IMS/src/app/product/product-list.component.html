@@ -1,5 +1,48 @@
 <div class="container">
   <div class="row">
+    <div class="col">
+      <div class="alert alert-success" *ngIf="statusCode == 200">
+        Product Saved Successfully...!
+      </div>
+      <div class="alert alert-info" *ngIf="statusCode == 201">
+        Product Updated Successfully...!
+      </div>
+      <div class="alert alert-danger" *ngIf="statusCode == 400">
+        Product Delete Successfully...!
+      </div>
+    </div>
+  </div>
+  <form #f=ngForm (ngSubmit)="saveOrUpdate(f)">
+    <div class="row form-group">
+      <div class="col-md-2"><label>Id: </label></div>
+      <div class="col-md-4"><input type=text class="form-control" [(ngModel)]="newProduct.id" name="id" #id=ngModel required></div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-2"><label>Code: </label></div>
+      <div class="col-md-4"><input type=text class="form-control" [(ngModel)]="newProduct.code" name="code" #code=ngModel required></div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-2"><label>Description: </label></div>
+      <div class="col-md-4"><input type=text class="form-control" [(ngModel)]="newProduct.description" name="description" #description=ngModel required></div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-2"><label>Unit Price: </label></div>
+      <div class="col-md-4"><input type=text class="form-control" [(ngModel)]="newProduct.unitPrice" name="unitPrice" #unitPrice=ngModel required></div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-2"><label>Color: </label></div>
+      <div class="col-md-4"><input type=text class="form-control" [(ngModel)]="newProduct.color" name="color" #color=ngModel required></div>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-2"><label>Warranty: </label></div>
+      <div class="col-md-2"><input type=checkbox [(ngModel)]="newProduct.warranty" name="warranty" #warranty=ngModel></div>
+    </div>
+    <div class="row">
+      <div class="col-md-2" *ngIf="isUpdate == false"><button class="btn btn-primary" type="submit">Save</button></div>      
+      <div class="col-md-2" *ngIf="isUpdate"><button class="btn btn-primary" type="button" (click)="update()">Update</button></div>      
+    </div>
+  </form>
+  <div class="row">
       <div class="col-md-4">
         <table class="table table-striped">
           <thead> 
@@ -9,6 +52,7 @@
             <th>Unit Price</th>
             <th>Color</th>
             <th>Warranty</th>
+            <th>Action</th>
           </thead>
           <tbody>
             <tr *ngFor="let product of productList" (click)="getProductDetail(product.id)">
@@ -18,6 +62,10 @@
               <td>{{product.unitPrice}}</td>
               <td>{{product.color}}</td>
               <td>{{product.warranty}}</td>
+              <td>
+                <button class="btn btn-warning" (click)="edit(product.id)">Edit</button>
+                <button class="btn btn-danger" (click)="delete(product.id)">Delete</button>
+              </td>
             </tr>
           </tbody>
         </table>

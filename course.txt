@@ -19,17 +19,17 @@ Component Communication	-- Done
 	ViewChild
 ===================================
 -- Forms --  
-	1. Template Driven Forms
-	2. Reactive Forms
+	1. Template Driven Forms -- Done
+	2. Reactive Forms -- Done
 ======================
 -- DI & Services --
-	1. Dependency Injection -
-	2. Services / Providers --
+	1. Dependency Injection - Done
+	2. Services / Providers -- Done
 -- local storage/session storage 
 -- Observable from RXJS -- 
 	-- operators (map//catch) Done
 	-- switch map
--- HttpModule -- Done
+-- HttpModule --
 --JSON SERVER -- Done	 
 -- Routing Module & Routing with --
 Lazy Loading :: -- 
@@ -38,7 +38,7 @@ Lazy Loading :: --
 	-- JWT  --
 	-- Routing with guards - -- 
 ------------Start small project--------
-Pipes Inbuilt & custome pipe -- Done
+Pipes Inbuilt & custome pipe -- 
 Unit Testing -- 
 Animations  --
 Deployments-- how to deploy on server	--

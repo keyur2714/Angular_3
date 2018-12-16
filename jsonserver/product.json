@@ -20,7 +20,7 @@
       "id": 3,
       "code": "M03",
       "description": "Mobile MI Note 5 Pro",
-      "unitPrice": 15000,
+      "unitPrice": "15500",
       "warranty": "Y",
       "color": "BLACK"
     },
@@ -39,23 +39,31 @@
       "unitPrice": "17000",
       "warranty": "Y",
       "color": "WHITE"
+    },
+    {
+      "id": "7",
+      "code": "NOKIA",
+      "description": "Nokia 3310",
+      "unitPrice": "3000",
+      "warranty": "N",
+      "color": "Black"
     }
   ],
   "department": [
-	{
-		"id":10,
-		"code":"IT",
-		"desc":"It Dept"
-	},
-	{
-		"id":20,
-		"code":"SALES",
-		"desc":"Sales Dept"
-	},
-	{
-		"id":3,
-		"code":"HR",
-		"desc":"HR Dept"
-	}
+    {
+      "id": 10,
+      "code": "IT",
+      "desc": "It Dept"
+    },
+    {
+      "id": 20,
+      "code": "SALES",
+      "desc": "Sales Dept"
+    },
+    {
+      "id": 3,
+      "code": "HR",
+      "desc": "HR Dept"
+    }
   ]
 }
