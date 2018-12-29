@@ -12,7 +12,7 @@
       "id": 2,
       "code": "M02",
       "description": "Mobile MI A2",
-      "unitPrice": "12000",
+      "unitPrice": "15000",
       "warranty": "Y",
       "color": "WHITE"
     },
@@ -39,14 +39,6 @@
       "unitPrice": "17000",
       "warranty": "Y",
       "color": "WHITE"
-    },
-    {
-      "id": "7",
-      "code": "NOKIA",
-      "description": "Nokia 3310",
-      "unitPrice": "3000",
-      "warranty": "N",
-      "color": "Black"
     }
   ],
   "department": [
