@@ -23,14 +23,32 @@ export class ProductListComponent implements OnInit {
   }
 
   getProductList():void{
-    this.productService.getProductList().subscribe(
-      (response : Response)=>{
-        console.log(response);
-        console.log(response.json());
-        this.productList = response.json();
+    // this.productService.getProductList().subscribe(
+    //   (response : Response)=>{
+    //     console.log(response);
+    //     console.log(response.json());
+    //     this.productList = response.json();
+    //   },
+    //   (error)=>{
+
+    //   }
+    // );
+    // this.productService.getProductListWithMap().subscribe(
+    //   (productList : Product[])=>{
+    //     console.log(productList);        
+    //     this.productList = productList;
+    //   },
+    //   (error)=>{
+
+    //   }
+    // );
+    this.productService.getProductListWithHttpClient().subscribe(
+      (productList : Product[])=>{
+        console.log(productList);        
+        this.productList = productList;
       },
       (error)=>{
-
+        
       }
     );
   }
@@ -51,10 +69,10 @@ export class ProductListComponent implements OnInit {
         this.newProduct.warranty = "Y";
       }else{
         this.newProduct.warranty = "N";
-      }      
+      }            
       this.productService.updateProduct(this.newProduct).subscribe(
-        (data: Response)=>{
-          console.log(data.json());
+        (data: number)=>{
+          console.log(data);
           this.statusCode = "201";
           this.getProductList();
         },
@@ -70,7 +88,7 @@ export class ProductListComponent implements OnInit {
         this.newProduct.warranty = "Y";
       }else{
         this.newProduct.warranty = "N";
-      }
+      }      
         this.productService.saveProduct(this.newProduct).subscribe(
           (data: Response)=>{
             console.log(data.json());
