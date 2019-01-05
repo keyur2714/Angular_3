@@ -1,3 +1,27 @@
-<p>
-  manage-product works!
-</p>
+<div class="row">
+     <div class="col-md-4">
+       <table class="table table-striped">
+         <thead>
+          <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Color</th>
+            <th>Warranty</th>
+          </tr>        
+          <tr *ngFor="let product of productList">
+            <td><a [routerLink]="['productDetail',product.id]">{{product.id}}</a></td>
+            <td>{{product.code}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.unitPrice}}</td>
+            <td>{{product.color}}</td>
+            <td>{{product.warranty}}</td>
+          </tr>
+         </thead>
+       </table>
+    </div> 
+    <div class="col-md-4">
+      <router-outlet></router-outlet>
+    </div>  
+</div>
