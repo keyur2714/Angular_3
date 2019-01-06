@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col">
+      <div class="alert alert-success" *ngIf="statusCode == 200">
+        Product Saved Successfully...!
+      </div>
+      <div class="alert alert-info" *ngIf="statusCode == 201">
+        Product Updated Successfully...!
+      </div>      
+    </div>
+</div>
+<div class="row">
+  <div class="col">
+    <form #f=ngForm (ngSubmit)="saveOrUpdate(f)">
+      <div class="row form-group">
+        <div class="col-md-2"><label>Id: </label></div>
+        <div class="col-md-4"><input type=text class="form-control" [(ngModel)]="newProduct.id" name="id" #id=ngModel required></div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Code: </label></div>
+        <div class="col-md-4"><input type=text class="form-control" [(ngModel)]="newProduct.code" name="code" #code=ngModel required></div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Description: </label></div>
+        <div class="col-md-4"><input type=text class="form-control" [(ngModel)]="newProduct.description" name="description" #description=ngModel required></div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Unit Price: </label></div>
+        <div class="col-md-4"><input type=text class="form-control" [(ngModel)]="newProduct.unitPrice" name="unitPrice" #unitPrice=ngModel required></div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Color: </label></div>
+        <div class="col-md-4"><input type=text class="form-control" [(ngModel)]="newProduct.color" name="color" #color=ngModel required></div>
+      </div>
+      <div class="row form-group">
+        <div class="col-md-2"><label>Warranty: </label></div>
+        <div class="col-md-2"><input type=checkbox [(ngModel)]="newProduct.warranty" name="warranty" #warranty=ngModel></div>
+      </div>
+      <div class="row">
+        <div *ngIf="productId == undefined"><button class="btn btn-primary mr-2" type="submit">Save</button></div>      
+        <div *ngIf="productId !== undefined"><button class="btn btn-primary mr-2" type="button" (click)="update()">Update</button></div>              
+        <div><button (click)="back()" class="btn btn-secondary">Back</button></div>
+      </div>
+    </form>
+  </div>
+</div>

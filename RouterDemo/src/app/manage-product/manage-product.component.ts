@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product.model';
 import { ProductService } from './product.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-manage-product',
   templateUrl: './manage-product.component.html',
@@ -10,7 +11,7 @@ export class ManageProductComponent implements OnInit {
 
   productList: Product[] = [];
   
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,private router:Router) { }
 
   ngOnInit() {
     this.productService.getProductList().subscribe(
@@ -20,4 +21,11 @@ export class ManageProductComponent implements OnInit {
     )
   }
 
+  addNewProduct():void{
+    this.router.navigate(['newproduct']);
+  }
+  
+  edit(id):void{
+    this.router.navigate(['newproduct',id]);
+  }
 }

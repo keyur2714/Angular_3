@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
@@ -10,6 +11,7 @@ import { ManageProductComponent } from './manage-product/manage-product.componen
 import { PageNotFoundComponent } from './pagenotfound.component';
 import { ProductService } from './manage-product/product.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { ProductEntryComponent } from './product-entry/product-entry.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     AboutUsComponent,
     ManageProductComponent,
     PageNotFoundComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductEntryComponent
   ],
   imports: [
     BrowserModule,
@@ -33,10 +36,18 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
           { path: 'productDetail/:id' ,component : ProductDetailComponent}
         ]
       },
+      {
+        path: 'newproduct',component : ProductEntryComponent
+      },
+      {
+        path: 'newproduct/:id',component : ProductEntryComponent
+      }
+      ,      
       {path: '**', component : PageNotFoundComponent}     
     ]
     ),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

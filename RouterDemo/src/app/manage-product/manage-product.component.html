@@ -1,3 +1,8 @@
+<div class="row form-group">
+  <div class="col-md-4">
+    <button (click)="addNewProduct()" class="btn btn-info">Add</button>
+  </div>
+</div>
 <div class="row">
      <div class="col-md-4">
        <table class="table table-striped">
@@ -9,6 +14,7 @@
             <th>Price</th>
             <th>Color</th>
             <th>Warranty</th>
+            <th>Action</th>
           </tr>        
           <tr *ngFor="let product of productList">
             <td><a [routerLink]="['productDetail',product.id]">{{product.id}}</a></td>
@@ -17,6 +23,10 @@
             <td>{{product.unitPrice}}</td>
             <td>{{product.color}}</td>
             <td>{{product.warranty}}</td>
+            <td>
+              <button (click)="edit(product.id)" class="btn btn-info mr-1">Edit</button>
+              <button (click)="delete(product.id)" class="btn btn-danger">Delete</button>
+            </td>
           </tr>
          </thead>
        </table>

@@ -15,4 +15,17 @@ export class ProductService {
        getProductById(id:number):Observable<Product>{
         return  this.httpClient.get<Product>(this.appURL+"/"+id); 
        } 
+
+       saveProductWithHttpClient(product:Product):Observable<number> {
+            return this.httpClient.post<number>(this.appURL,product);
+       }
+
+       updateProduct(product:Product):Observable<number>{
+            return this.httpClient.put<number>(this.appURL+"/"+product.id,product);
+       }
+
+       deletProductById(id:number):Observable<Response>{
+            return this.httpClient.delete<Response>(this.appURL+"/"+id);
+       }
+
 }
