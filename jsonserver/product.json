@@ -39,14 +39,6 @@
       "unitPrice": "17000",
       "warranty": "Y",
       "color": "WHITE"
-    },
-    {
-      "id": "6",
-      "code": "MI7",
-      "description": "Mobile MI A7",
-      "unitPrice": "15000",
-      "color": "Black",
-      "warranty": "Y"
     }
   ],
   "department": [

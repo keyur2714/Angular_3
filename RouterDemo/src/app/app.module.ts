@@ -12,6 +12,9 @@ import { PageNotFoundComponent } from './pagenotfound.component';
 import { ProductService } from './manage-product/product.service';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductEntryComponent } from './product-entry/product-entry.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AuthGuard } from './auth/auth-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,9 @@ import { ProductEntryComponent } from './product-entry/product-entry.component';
     ManageProductComponent,
     PageNotFoundComponent,
     ProductDetailComponent,
-    ProductEntryComponent
+    ProductEntryComponent,
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,7 @@ import { ProductEntryComponent } from './product-entry/product-entry.component';
       {path: 'aboutus',component : AboutUsComponent},
       {path: 'contactus',component : ContactUsComponent},
       {
-        path: 'manageproduct',component : ManageProductComponent,
+        path: 'manageproduct',component : ManageProductComponent,canActivate: [AuthGuard],
         children: [
           { path: 'productDetail/:id' ,component : ProductDetailComponent}
         ]
@@ -41,15 +46,15 @@ import { ProductEntryComponent } from './product-entry/product-entry.component';
       },
       {
         path: 'newproduct/:id',component : ProductEntryComponent
-      }
-      ,      
+      },
+      {path: 'signin',component : LoginComponent},           
       {path: '**', component : PageNotFoundComponent}     
     ]
     ),
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductService],
+  providers: [ProductService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

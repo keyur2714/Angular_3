@@ -10,10 +10,15 @@ import { Router } from '@angular/router';
 export class ManageProductComponent implements OnInit {
 
   productList: Product[] = [];
+  statusCode: string = '';
   
   constructor(private productService: ProductService,private router:Router) { }
 
   ngOnInit() {
+    this.getProductDetails();
+  }
+
+  getProductDetails():void{
     this.productService.getProductList().subscribe(
       (productList: Product[])=>{
         this.productList = productList;
@@ -27,5 +32,17 @@ export class ManageProductComponent implements OnInit {
   
   edit(id):void{
     this.router.navigate(['newproduct',id]);
+  }
+
+  delete(id):void{
+    let confirmMsg = confirm("Are you sure want to delete product?");
+    if(confirmMsg){
+      this.productService.deletProductById(id).subscribe(
+        (data)=>{                    
+          this.statusCode = "204";          
+          this.getProductDetails();
+        },(error)=>{}
+      )
+    }
   }
 }

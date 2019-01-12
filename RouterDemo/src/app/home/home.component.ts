@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  name : string = '';
+  city : string = '';
+
+  constructor(private activatedRoute : ActivatedRoute) { }
 
   ngOnInit() {
+    // this.activatedRoute.queryParams.subscribe(
+    //   (paramMap)=>{
+    //     this.name = paramMap.name;
+    //     this.city = paramMap.city;
+    //   }
+    // )
+    this.activatedRoute.queryParamMap.subscribe(
+      (queryParamMap)=>{
+        this.name = queryParamMap.get("name");
+        this.city = queryParamMap.get("city");
+      }
+    )
   }
 
 }

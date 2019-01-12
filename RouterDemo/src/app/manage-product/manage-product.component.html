@@ -4,6 +4,11 @@
   </div>
 </div>
 <div class="row">
+  <div class="col alert alert-danger" *ngIf="statusCode === '204'">
+    Product Deleted Successfully.
+  </div>
+</div>
+<div class="row">     
      <div class="col-md-4">
        <table class="table table-striped">
          <thead>
