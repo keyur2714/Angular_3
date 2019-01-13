@@ -57,5 +57,25 @@
       "code": "HR",
       "desc": "HR Dept"
     }
-  ]
+  ],
+  "users": [
+		{
+		  "id": 1,
+		  "userName": "keyur",
+		  "password": "Denish",
+		  "token": "Keyur@Denish"     
+		},
+		{
+		  "id": 2,
+		  "userName": "denish",
+		  "password": "Keyur",
+		  "token": "Denish@Keyur"      
+		},
+		{
+		  "id": 3,
+		  "userName": "Ami",
+		  "password": "Keyur",
+		  "token": "Ami@Keyur"   
+		}	
+	]
 }

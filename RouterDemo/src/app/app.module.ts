@@ -15,6 +15,7 @@ import { ProductEntryComponent } from './product-entry/product-entry.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGuard } from './auth/auth-guard.service';
+import { AuthenticationService } from './auth/authentication.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,13 +49,14 @@ import { AuthGuard } from './auth/auth-guard.service';
         path: 'newproduct/:id',component : ProductEntryComponent
       },
       {path: 'signin',component : LoginComponent},           
+      {path: 'signout',component : LogoutComponent},           
       {path: '**', component : PageNotFoundComponent}     
     ]
     ),
     HttpClientModule,
     FormsModule
   ],
-  providers: [ProductService,AuthGuard],
+  providers: [ProductService,AuthGuard,AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

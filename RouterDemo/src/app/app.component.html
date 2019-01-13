@@ -15,8 +15,11 @@
             <li class="nav-item">
               <a class="nav-link" [routerLink]="'contactus'" [routerLinkActive]="'selected'">Contact Us</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="! loggedIn">
                 <a class="nav-link" [routerLink]="'signin'" [routerLinkActive]="'selected'">Sign In</a>
+            </li>            
+            <li class="nav-item" *ngIf="loggedIn">
+              <a class="nav-link" [routerLink]="'signout'" [routerLinkActive]="'selected'">Sign Out</a>
             </li>            
           </ul>
         </nav>
@@ -24,7 +27,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <router-outlet></router-outlet>
+      <router-outlet (activate)="isLoggedIn()"></router-outlet>
     </div>
   </div>
 </div>

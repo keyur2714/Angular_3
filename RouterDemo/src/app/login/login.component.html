@@ -1,3 +1,9 @@
+{{errorStatus}}
+<div class="row" *ngIf="errorStatus === 401">
+  <div class="col alert alert-info">
+    InValid Username or Password
+  </div>
+</div>
 <div class="row">
   <div class="col">
     <form #f=ngForm (ngSubmit)="login(f)">
