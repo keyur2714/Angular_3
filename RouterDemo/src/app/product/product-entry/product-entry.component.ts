@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../manage-product/product.model';
 import { ProductService } from '../manage-product/product.service'; 
+import { ProductServiceWithNoHeader } from '../manage-product/product.service.withnoheader';
 @Component({
   selector: 'app-product-entry',
   templateUrl: './product-entry.component.html',
@@ -15,7 +16,7 @@ export class ProductEntryComponent implements OnInit {
   isUpdate: boolean = false;  
   productId : number = 0;
 
-  constructor(private location:Location,private productService:ProductService,private activatedRoute: ActivatedRoute) { }
+  constructor(private location:Location,private productService:ProductServiceWithNoHeader,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(

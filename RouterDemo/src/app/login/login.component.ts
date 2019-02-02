@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit {
                 if(user.userName === this.email && user.password === this.password){
                     console.log(user.token)                                        
                     this.isValidUser = true;
+                    sessionStorage.setItem("token",user.token);
                 }                        
             }
             this.authenticationService.setAuthenticated(this.isValidUser);            

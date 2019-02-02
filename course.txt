@@ -25,7 +25,7 @@ Component Communication	-- Done
 -- DI & Services --
 	1. Dependency Injection - Done
 	2. Services / Providers -- Done
--- local storage/session storage 
+-- local storage/session storage -- Done
 -- Observable from RXJS -- 
 	-- operators (map//catch) Done
 	-- switch map
@@ -36,7 +36,7 @@ Lazy Loading :: --
 -- Aunticationn & Authorization 
 	-- Http Interceptor --
 	-- JWT  --
-	-- Routing with guards - -- 
+	-- Routing with guards - -- Done
 ------------Start small project--------
 Pipes Inbuilt & custome pipe -- 
 Unit Testing -- 

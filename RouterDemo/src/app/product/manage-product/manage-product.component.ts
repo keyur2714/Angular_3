@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './product.model';
 import { ProductService } from './product.service';
 import { Router } from '@angular/router';
+import { ProductServiceWithNoHeader } from './product.service.withnoheader';
 @Component({
   selector: 'app-manage-product',
   templateUrl: './manage-product.component.html',
@@ -12,7 +13,7 @@ export class ManageProductComponent implements OnInit {
   productList: Product[] = [];
   statusCode: string = '';
   
-  constructor(private productService: ProductService,private router:Router) { }
+  constructor(private productService: ProductServiceWithNoHeader,private router:Router) { }
 
   ngOnInit() {
     this.getProductDetails();
