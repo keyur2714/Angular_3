@@ -34,7 +34,7 @@ Component Communication	-- Done
 -- Routing Module & Routing with --
 Lazy Loading :: -- 
 -- Aunticationn & Authorization 
-	-- Http Interceptor --
+	-- Http Interceptor -- Done
 	-- JWT  --
 	-- Routing with guards - -- Done
 ------------Start small project--------
