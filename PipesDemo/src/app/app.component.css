@@ -1,0 +1,20 @@
+.dist{
+    background: green;
+    color: white;
+}
+.first{
+    background: orchid;
+    color: white;
+}
+.second{
+    background: blueviolet;
+    color: white;
+}
+.pass{
+    background: peru;
+    color: white;
+}
+.fail{
+    background: red;
+    color: white;
+}

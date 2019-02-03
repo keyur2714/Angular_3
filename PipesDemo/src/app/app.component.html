@@ -1,0 +1,21 @@
+<h1>{{title | uppercase | lowercase}}</h1>
+
+<p>{{today | date : 'dd-MMM-yy hh:mm:ss a'}}</p>
+
+<h3>
+  {{emp | json}}
+</h3>
+<p>
+  {{numbers | async}}
+</p>
+
+<h1>
+  {{msg | welcome}}
+</h1>
+<h2>{{name | welcome }}</h2>
+
+<h1 [class]="grade | statusConvert">{{grade}}</h1>
+
+<p>
+  {{name | loop : '7' : 'Hi'}}
+</p>
