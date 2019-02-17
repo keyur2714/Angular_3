@@ -1,0 +1,28 @@
+npm install --save @angular/material @angular/cdk 
+
+npm install --save @angular/animations 
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+@NgModule({
+   imports: [BrowserAnimationsModule],
+   ------
+})
+export class AppModule { } 
+
+styles.css
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css"; 
+
+npm install --save hammerjs 
+
+main.ts
+
+import 'hammerjs'; 
+
+index.html -- for icon
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+
+----------
+

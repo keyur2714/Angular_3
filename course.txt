@@ -38,10 +38,10 @@ Lazy Loading :: --
 	-- JWT  --
 	-- Routing with guards - -- Done
 ------------Start small project--------
-Pipes Inbuilt & custome pipe -- 
+Pipes Inbuilt & custome pipe -- Done
 Unit Testing -- 
 Animations  --
-Deployments-- how to deploy on server	--
+Deployments-- how to deploy on server	--Done
 Angular Material -  
 model popup 		
 
