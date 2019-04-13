@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable,interval } from 'rxjs';
+import { TestService } from './test-service';
 
 
 @Component({
@@ -8,19 +9,26 @@ import { Observable,interval } from 'rxjs';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
+  
   title = 'PipesDemo';
+
+  constructor(private testService: TestService){}
 
   msg : string = 'Hello Radhe Krishna...';
 
   grade : string = 'Fail';
 
-  name : string = 'keyur';
+  name : string = 'denish';
 
   today : Date = new Date();
 
   numbers = interval(1000);
 
   num = 0;
+
+  sayHello():string{
+    return this.testService.sayHello();
+  }
 
   emp = {
     name : 'keyur',
@@ -33,5 +41,9 @@ export class AppComponent implements OnInit{
     //     this.num = num;
     //   }
     // )
+  }
+
+  sum(num1:number,num2:number):number{
+    return num1 + num2;
   }
 }

@@ -8,4 +8,8 @@ export class AppPage {
   getTitleText() {
     return element(by.css('app-root h1')).getText();
   }
+
+  getPText() {
+    return element(by.css('app-root p')).getText();
+  }
 }

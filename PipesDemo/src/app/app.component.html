@@ -1,6 +1,6 @@
-<h1>{{title | uppercase | lowercase}}</h1>
+<h1>{{title}}</h1>
 
-<p>{{today | date : 'dd-MMM-yy hh:mm:ss a'}}</p>
+<p>PipesDemo</p>
 
 <h3>
   {{emp | json}}
@@ -9,12 +9,12 @@
   {{numbers | async}}
 </p>
 
-<h1>
+<h3>
   {{msg | welcome}}
-</h1>
+</h3>
 <h2>{{name | welcome }}</h2>
 
-<h1 [class]="grade | statusConvert">{{grade}}</h1>
+<h4 [class]="grade | statusConvert">{{grade}}</h4>
 
 <p>
   {{name | loop : '7' : 'Hi'}}

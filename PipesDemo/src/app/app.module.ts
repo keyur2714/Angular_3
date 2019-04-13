@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { WelcomePipe } from './welcome.pipe';
 import { StatusConvertPipe } from './status-convert.pipe';
 import { LoopPipe } from './loop.pipe';
+import { TestService } from './test-service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { LoopPipe } from './loop.pipe';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [TestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
